@@ -90,10 +90,10 @@ export default function CheckoutPage() {
   }
 
   return (
-    <main className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+    <main className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-16">
       <FadeIn>
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="font-display text-3xl sm:text-4xl text-matcha-fg">
+        <div className="flex items-center justify-between mb-3 sm:mb-4">
+          <h1 className="font-display text-2xl sm:text-4xl text-matcha-fg">
             {step === 'cart' ? 'Your Cart' : 'Payment'}
           </h1>
           {step === 'cart' && (
@@ -101,7 +101,7 @@ export default function CheckoutPage() {
           )}
         </div>
         {/* Step indicator */}
-        <div className="flex items-center gap-2 mb-8">
+        <div className="flex items-center gap-2 mb-4 sm:mb-8">
           <button onClick={() => setStep('cart')} className={`text-xs font-medium px-2.5 py-1 rounded-full transition-colors ${step === 'cart' ? 'bg-matcha-accent text-white' : 'text-matcha-fg-muted hover:text-matcha-fg'}`}>
             1. Cart
           </button>
@@ -112,12 +112,12 @@ export default function CheckoutPage() {
         </div>
       </FadeIn>
 
-      <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
+      <div className="grid lg:grid-cols-3 gap-4 sm:gap-8">
         {/* Left — Items + Promo + Payment */}
         <div className="lg:col-span-2 space-y-6">
           <AnimatePresence mode="wait">
             {step === 'cart' ? (
-              <motion.div key="cart" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-6">
+              <motion.div key="cart" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-3 sm:space-y-6">
                 {/* Cart Items */}
                 <div className="space-y-3">
                   <AnimatePresence>
