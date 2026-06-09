@@ -21,12 +21,12 @@
     "@matcha/shared-kernel": "workspace:*",
     "@matcha/contracts": "workspace:*",
     "@matcha/telemetry": "workspace:*",
-    "express": "4.21.2",
+    "express": "5.2.1",
     "zod": "3.24.1"
   },
   "devDependencies": {
     "@matcha/config": "workspace:*",
-    "@types/express": "5.0.0",
+    "@types/express": "5.0.6",
     "prisma": "6.1.0",
     "tsx": "4.19.2",
     "vitest": "2.1.8",
