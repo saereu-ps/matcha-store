@@ -1,6 +1,5 @@
 {
-  "buildCommand": "cd apps/web && pnpm run build",
-  "outputDirectory": "apps/web/.next",
+  "buildCommand": "pnpm --filter @matcha/web build",
   "framework": "nextjs",
   "installCommand": "pnpm install"
 }
