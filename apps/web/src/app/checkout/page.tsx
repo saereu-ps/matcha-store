@@ -328,8 +328,8 @@ export default function CheckoutPage() {
 
         {/* Right — Order Summary (sticky) */}
         <div className="lg:sticky lg:top-24 lg:self-start">
-          <Card>
-            <h3 className="font-medium text-matcha-fg mb-4">Order Summary</h3>
+          <Card className="p-4 sm:p-6">
+            <h3 className="font-medium text-matcha-fg mb-3 sm:mb-4 text-sm sm:text-base">Order Summary</h3>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span className="text-matcha-fg-muted">Subtotal ({itemCount} items)</span>

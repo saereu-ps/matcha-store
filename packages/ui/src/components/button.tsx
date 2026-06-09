@@ -30,9 +30,9 @@ const variantStyles: Record<Variant, string> = {
 };
 
 const sizeStyles: Record<Size, string> = {
-  sm: 'px-3 py-1.5 text-sm rounded-md',
-  md: 'px-4 py-2 text-base rounded-md',
-  lg: 'px-6 py-3 text-lg rounded-lg',
+  sm: 'px-3 py-1.5 text-xs rounded-md',
+  md: 'px-4 py-2.5 text-sm rounded-lg',
+  lg: 'px-6 py-3 sm:py-3.5 text-sm sm:text-base rounded-lg',
 };
 
 export function Button({ variant = 'primary', size = 'md', loading = false, className, children, disabled, onClick, type = 'button' }: ButtonProps): ReactNode {
