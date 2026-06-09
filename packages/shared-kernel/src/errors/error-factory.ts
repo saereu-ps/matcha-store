@@ -1,4 +1,4 @@
-import { ProblemDetail, type ValidationError } from './problem-detail.js';
+import { ProblemDetail, type ValidationError } from './problem-detail';
 
 export const ErrorCodes = {
   INVALID_REQUEST: 'MATCHA-001',

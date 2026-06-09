@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import { useContext, useEffect, useRef } from 'react';
 
-import { SoundContext } from '../sound/sound-provider.js';
+import { SoundContext } from '../sound/sound-provider';
 
 /**
  * Play a sound on page navigation (route change).

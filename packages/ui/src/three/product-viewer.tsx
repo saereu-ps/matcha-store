@@ -2,7 +2,7 @@
 
 import { Suspense, type ReactNode } from 'react';
 
-import { useWebGLCapability } from '../hooks/use-webgl-capability.js';
+import { useWebGLCapability } from '../hooks/use-webgl-capability';
 
 interface ProductViewer3DProps {
   modelUrl: string;

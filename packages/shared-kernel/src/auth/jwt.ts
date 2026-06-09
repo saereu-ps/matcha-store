@@ -1,4 +1,4 @@
-import type { AuthContext, JwtClaims } from './types.js';
+import type { AuthContext, JwtClaims } from './types';
 
 /**
  * Verify a JWT token and extract claims.

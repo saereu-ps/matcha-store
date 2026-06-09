@@ -2,7 +2,7 @@
 
 import { useCallback, useContext, useEffect, useRef } from 'react';
 
-import { CursorContext, type CursorType } from '../cursor/cursor-provider.js';
+import { CursorContext, type CursorType } from '../cursor/cursor-provider';
 
 export function useCursorContext(type: CursorType): {
   ref: React.RefObject<HTMLElement | null>;

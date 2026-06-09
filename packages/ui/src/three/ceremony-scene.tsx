@@ -2,7 +2,7 @@
 
 import { useState, type ReactNode } from 'react';
 
-import { useWebGLCapability } from '../hooks/use-webgl-capability.js';
+import { useWebGLCapability } from '../hooks/use-webgl-capability';
 
 interface CeremonyStep {
   id: string;

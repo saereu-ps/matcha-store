@@ -3,9 +3,9 @@
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { useContext, useEffect, type ReactNode } from 'react';
 
-import { useReducedMotion } from '../hooks/use-reduced-motion.js';
+import { useReducedMotion } from '../hooks/use-reduced-motion';
 
-import { CursorContext, type CursorType } from './cursor-provider.js';
+import { CursorContext, type CursorType } from './cursor-provider';
 
 const cursorSizes: Record<CursorType, number> = {
   default: 12,

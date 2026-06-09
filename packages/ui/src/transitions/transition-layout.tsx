@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import type { ReactNode } from 'react';
 
-import { useReducedMotion } from '../hooks/use-reduced-motion.js';
+import { useReducedMotion } from '../hooks/use-reduced-motion';
 
 interface TransitionLayoutProps {
   children: ReactNode;

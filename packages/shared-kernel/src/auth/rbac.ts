@@ -1,5 +1,5 @@
-import { createError } from '../errors/error-factory.js';
-import type { AuthContext } from './types.js';
+import { createError } from '../errors/error-factory';
+import type { AuthContext } from './types';
 
 /**
  * Check if the auth context has the required role.

@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 import { motion } from 'framer-motion';
 import type { ReactNode } from 'react';
 
-import { useReducedMotion } from '../hooks/use-reduced-motion.js';
+import { useReducedMotion } from '../hooks/use-reduced-motion';
 
 type Variant = 'primary' | 'secondary' | 'ghost';
 type Size = 'sm' | 'md' | 'lg';

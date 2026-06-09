@@ -2,7 +2,7 @@
 
 import { useContext } from 'react';
 
-import { SoundContext, type SoundContextValue } from '../sound/sound-provider.js';
+import { SoundContext, type SoundContextValue } from '../sound/sound-provider';
 
 export function useSoundEnabled(): SoundContextValue {
   const context = useContext(SoundContext);

@@ -1,4 +1,4 @@
-import { CurrencyCode } from './currency-code.js';
+import { CurrencyCode } from './currency-code';
 
 export class Money {
   private constructor(

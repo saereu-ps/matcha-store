@@ -2,7 +2,7 @@
 
 import { useCallback, useContext, useRef } from 'react';
 
-import { SoundContext } from '../sound/sound-provider.js';
+import { SoundContext } from '../sound/sound-provider';
 
 /**
  * Play a sound on element hover.
