@@ -1,0 +1,83 @@
+@import '@matcha/ui/theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--matcha-bg);
+    color: var(--matcha-fg);
+    transition: background-color 400ms ease, color 400ms ease;
+    /* Subtle washi paper texture */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect fill='%23000' fill-opacity='0.015' width='1' height='1' x='0' y='0'/%3E%3Crect fill='%23000' fill-opacity='0.01' width='1' height='1' x='2' y='2'/%3E%3C/svg%3E");
+  }
+
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--matcha-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--matcha-border);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--matcha-fg-subtle);
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: var(--matcha-accent);
+    color: white;
+  }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: 2px solid var(--matcha-accent);
+    outline-offset: 2px;
+  }
+
+  /* Smooth image rendering */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  /* Link transitions */
+  a {
+    transition: color 150ms ease;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Safe area padding for notched devices */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-x {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Touch-friendly tap targets */
+  .tap-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

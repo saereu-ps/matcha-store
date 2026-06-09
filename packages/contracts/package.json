@@ -1,0 +1,30 @@
+{
+  "name": "@matcha/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Auto-generated TypeScript types from OpenAPI, Protobuf, and Avro schemas",
+  "type": "module",
+  "main": "./generated/index.js",
+  "types": "./generated/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./generated/index.d.ts",
+      "import": "./generated/index.js"
+    },
+    "./rest/*": "./generated/rest/*",
+    "./events/*": "./generated/events/*"
+  },
+  "scripts": {
+    "codegen": "tsx scripts/codegen.ts",
+    "build": "tsc",
+    "lint": "eslint generated/",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf generated/ dist/"
+  },
+  "devDependencies": {
+    "@matcha/config": "workspace:*",
+    "openapi-typescript": "7.4.4",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2"
+  }
+}

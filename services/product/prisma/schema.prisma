@@ -1,0 +1,117 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  slug        String   @unique
+  description String?
+  grade       Grade
+  origin      String
+  cultivar    String?
+  harvestDate DateTime?
+  elevation   Int?
+  processing  String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  variants    ProductVariant[]
+  categories  ProductCategory[]
+  images      ProductImage[]
+  flavorProfile FlavorProfile?
+
+  @@index([grade])
+  @@index([origin])
+  @@index([isActive])
+}
+
+model ProductVariant {
+  id        String  @id @default(uuid())
+  productId String
+  sku       String  @unique
+  grind     Grind
+  weight    Int     // grams
+  packaging Packaging
+  price     Decimal @db.Decimal(10, 2)
+  currency  String  @default("USD")
+  stock     Int     @default(0)
+  isActive  Boolean @default(true)
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+  @@index([sku])
+}
+
+model FlavorProfile {
+  id        String @id @default(uuid())
+  productId String @unique
+  umami     Int    // 0-100
+  sweet     Int    // 0-100
+  vegetal   Int    // 0-100
+  body      Int    // 0-100
+  notes     String? // Cupping notes
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Category {
+  id       String @id @default(uuid())
+  name     String @unique
+  slug     String @unique
+  parentId String?
+  sortOrder Int @default(0)
+
+  parent   Category?  @relation("CategoryTree", fields: [parentId], references: [id])
+  children Category[] @relation("CategoryTree")
+  products ProductCategory[]
+}
+
+model ProductCategory {
+  productId  String
+  categoryId String
+
+  product  Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([productId, categoryId])
+}
+
+model ProductImage {
+  id        String @id @default(uuid())
+  productId String
+  url       String
+  alt       String?
+  sortOrder Int    @default(0)
+  is3D      Boolean @default(false)
+  modelUrl  String?
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+}
+
+enum Grade {
+  CEREMONIAL
+  PREMIUM
+  CULINARY
+}
+
+enum Grind {
+  FINE
+  STANDARD
+}
+
+enum Packaging {
+  POUCH
+  TIN
+  GIFT_BOX
+}

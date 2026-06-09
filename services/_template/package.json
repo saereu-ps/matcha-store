@@ -1,0 +1,35 @@
+{
+  "name": "@matcha/{{SERVICE_NAME}}",
+  "version": "0.1.0",
+  "private": true,
+  "description": "{{DESCRIPTION}}",
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "lint": "eslint src/",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist coverage",
+    "migrate": "prisma migrate deploy",
+    "migrate:dev": "prisma migrate dev",
+    "seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@matcha/shared-kernel": "workspace:*",
+    "@matcha/contracts": "workspace:*",
+    "@matcha/telemetry": "workspace:*",
+    "express": "4.21.2",
+    "zod": "3.24.1"
+  },
+  "devDependencies": {
+    "@matcha/config": "workspace:*",
+    "@types/express": "5.0.0",
+    "prisma": "6.1.0",
+    "tsx": "4.19.2",
+    "vitest": "2.1.8",
+    "typescript": "5.7.2"
+  }
+}

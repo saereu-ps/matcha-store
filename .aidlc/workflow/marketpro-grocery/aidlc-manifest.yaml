@@ -1,0 +1,235 @@
+version: "2.2"
+feature: "marketpro-grocery"
+language: "en"
+platform: "kiro"
+created: "2026-06-09T12:00:00Z"
+updated: "2026-06-09T12:00:00Z"
+state:
+  status: "completed"
+  sharedPhases: [context, requirements, decomposition, foundation]
+  mode: "incremental"
+  foundationSkipped: false
+  implementationMode: null
+  quickPath: false
+artifacts:
+  context:
+    status: "approved"
+    timestamp: "2026-06-09T12:04:00Z"
+    files: [context.md]
+  requirements:
+    status: "approved"
+    timestamp: "2026-06-09T12:05:00Z"
+    files: [requirements.md, personas.md]
+  decomposition:
+    status: "approved"
+    timestamp: "2026-06-09T12:08:00Z"
+    files: [units.md]
+  foundation:
+    status: "approved"
+    timestamp: "2026-06-09T12:09:00Z"
+    files: [foundation.md]
+implementation:
+  totalTasks: 0
+  completedTasks: 0
+  currentTask: null
+  currentWave: null
+context-summary:
+  type: "Greenfield"
+  stack: "Pending D3 decisions (TypeScript / Next.js 14 / Tailwind CSS / PostgreSQL / Redis / Elasticsearch)"
+  architecture: "Pending D2/D3 decisions (Modular monolith with event-driven subscription engine)"
+  feature: "Enterprise-grade premium matcha tea e-commerce with AI personalization, subscription engine, interactive educational content, gamification, internationalization, and immersive modern design"
+  impact: "New standalone"
+  complexity: "Very High"
+  teamSize: "medium"
+  recommendations: { personas: true, units: true, nfr: true }
+decisions:
+  requirements:
+    scope: "Enterprise — full platform with admin, analytics, A/B testing, internationalization"
+    users: "All types (Casual Browser, Enthusiast, Subscriber, Gift Buyer, Content Admin, Operations Admin)"
+    productConfig: "Enterprise — full multi-dimensional matrix with real-time pricing"
+    aiPersonalization: "Advanced — hybrid ML, adaptive UI, predictive restock, A/B experimentation"
+    subscriptions: "Enterprise — smart cadence, usage-based, loyalty integration, win-back"
+    educational: "Immersive — 3D viewer, interactive brewing, origin map, masterclasses, quizzes, PWA"
+    gamification: "Full — tiers, achievements, leaderboard, streaks, seasonal challenges"
+    internationalization: "Full i18n — multi-language, multi-currency, RTL-ready"
+    social: "Full — tasting journal, verified reviews, referrals, community highlights"
+    design: "Immersive luxury — 3D, kinetic typography, ambient sound, custom cursor"
+    integrations: "Enterprise — 10+ services"
+    admin: "Enterprise — configurator, analytics, CMS, A/B testing, forecasting"
+    personas: "Yes"
+    teamSize: "medium"
+    priority: "MoSCoW"
+steering:
+  updatedBy:
+    product: [context, requirements]
+    tech: [context, foundation]
+    structure: [context, foundation]
+units:
+  - name: "matcha-design-system"
+    status: "completed"
+    phase: "completed"
+    completedPhases: [design, tasks, implement]
+    implementationMode: null
+    implementation:
+      totalTasks: 0
+      completedTasks: 0
+      currentTask: null
+      currentWave: null
+    artifacts: {}
+    decisions: {}
+  - name: "matcha-foundation"
+    status: "completed"
+    phase: "completed"
+    completedPhases: [design, tasks, implement]
+    implementationMode: null
+    implementation:
+      totalTasks: 0
+      completedTasks: 0
+      currentTask: null
+      currentWave: null
+    artifacts: {}
+    decisions: {}
+  - name: "matcha-gateway"
+    status: "completed"
+    phase: "completed"
+    completedPhases: [design, tasks, implement]
+    implementationMode: null
+    implementation:
+      totalTasks: 0
+      completedTasks: 0
+      currentTask: null
+      currentWave: null
+    artifacts: {}
+    decisions: {}
+  - name: "matcha-event-bus"
+    status: "completed"
+    phase: "completed"
+    completedPhases: [design, tasks, implement]
+    implementationMode: null
+    implementation:
+      totalTasks: 0
+      completedTasks: 0
+      currentTask: null
+      currentWave: null
+    artifacts: {}
+    decisions: {}
+  - name: "matcha-auth-service"
+    status: "completed"
+    phase: "completed"
+    completedPhases: [design, tasks, implement]
+    implementationMode: null
+    implementation:
+      totalTasks: 0
+      completedTasks: 0
+      currentTask: null
+      currentWave: null
+    artifacts: {}
+    decisions: {}
+  - name: "matcha-product"
+    status: "completed"
+    phase: "completed"
+    completedPhases: [design, tasks, implement]
+    implementationMode: null
+    implementation:
+      totalTasks: 0
+      completedTasks: 0
+      currentTask: null
+      currentWave: null
+    artifacts: {}
+    decisions: {}
+  - name: "matcha-user"
+    status: "completed"
+    phase: "completed"
+    completedPhases: [design, tasks, implement]
+    implementationMode: null
+    implementation:
+      totalTasks: 0
+      completedTasks: 0
+      currentTask: null
+      currentWave: null
+    artifacts: {}
+    decisions: {}
+  - name: "matcha-subscription"
+    status: "completed"
+    phase: "completed"
+    completedPhases: [design, tasks, implement]
+    implementationMode: null
+    implementation:
+      totalTasks: 0
+      completedTasks: 0
+      currentTask: null
+      currentWave: null
+    artifacts: {}
+    decisions: {}
+  - name: "matcha-ai"
+    status: "completed"
+    phase: "completed"
+    completedPhases: [design, tasks, implement]
+    implementationMode: null
+    implementation:
+      totalTasks: 0
+      completedTasks: 0
+      currentTask: null
+      currentWave: null
+    artifacts: {}
+    decisions: {}
+  - name: "matcha-education"
+    status: "completed"
+    phase: "completed"
+    completedPhases: [design, tasks, implement]
+    implementationMode: null
+    implementation:
+      totalTasks: 0
+      completedTasks: 0
+      currentTask: null
+      currentWave: null
+    artifacts: {}
+    decisions: {}
+  - name: "matcha-loyalty"
+    status: "completed"
+    phase: "completed"
+    completedPhases: [design, tasks, implement]
+    implementationMode: null
+    implementation:
+      totalTasks: 0
+      completedTasks: 0
+      currentTask: null
+      currentWave: null
+    artifacts: {}
+    decisions: {}
+  - name: "matcha-cart"
+    status: "completed"
+    phase: "completed"
+    completedPhases: [design, tasks, implement]
+    implementationMode: null
+    implementation:
+      totalTasks: 0
+      completedTasks: 0
+      currentTask: null
+      currentWave: null
+    artifacts: {}
+    decisions: {}
+  - name: "matcha-i18n"
+    status: "completed"
+    phase: "completed"
+    completedPhases: [design, tasks, implement]
+    implementationMode: null
+    implementation:
+      totalTasks: 0
+      completedTasks: 0
+      currentTask: null
+      currentWave: null
+    artifacts: {}
+    decisions: {}
+  - name: "matcha-admin"
+    status: "completed"
+    phase: "completed"
+    completedPhases: [design, tasks, implement]
+    implementationMode: null
+    implementation:
+      totalTasks: 0
+      completedTasks: 0
+      currentTask: null
+      currentWave: null
+    artifacts: {}
+    decisions: {}

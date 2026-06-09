@@ -1,0 +1,92 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Subscription {
+  id              String             @id @default(uuid())
+  userId          String
+  productId       String
+  variantSku      String
+  status          SubscriptionStatus @default(ACTIVE)
+  cadenceDays     Int
+  quantity        Int                @default(1)
+  stripeSubId     String?            @unique
+  nextDeliveryAt  DateTime?
+  pausedAt        DateTime?
+  cancelledAt     DateTime?
+  cancellationReason String?
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+
+  deliveries Delivery[]
+  cadenceHistory CadenceChange[]
+
+  @@index([userId])
+  @@index([status])
+}
+
+model GiftSubscription {
+  id               String   @id @default(uuid())
+  buyerUserId      String
+  recipientEmail   String
+  productId        String
+  variantSku       String
+  durationMonths   Int
+  personalMessage  String?
+  startDate        DateTime
+  endDate          DateTime
+  recipientUserId  String?
+  isRedeemed       Boolean  @default(false)
+  createdAt        DateTime @default(now())
+
+  @@index([buyerUserId])
+  @@index([recipientEmail])
+}
+
+model Delivery {
+  id             String         @id @default(uuid())
+  subscriptionId String
+  scheduledAt    DateTime
+  status         DeliveryStatus @default(SCHEDULED)
+  skippedAt      DateTime?
+  shippedAt      DateTime?
+  deliveredAt    DateTime?
+  productId      String
+  variantSku     String
+
+  subscription Subscription @relation(fields: [subscriptionId], references: [id])
+
+  @@index([subscriptionId])
+  @@index([scheduledAt])
+}
+
+model CadenceChange {
+  id             String   @id @default(uuid())
+  subscriptionId String
+  oldCadenceDays Int
+  newCadenceDays Int
+  reason         String?  // user_manual | system_suggestion | skip_pattern
+  changedAt      DateTime @default(now())
+
+  subscription Subscription @relation(fields: [subscriptionId], references: [id])
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  PAUSED
+  CANCELLED
+  EXPIRED
+}
+
+enum DeliveryStatus {
+  SCHEDULED
+  SKIPPED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+}

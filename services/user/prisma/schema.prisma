@@ -1,0 +1,96 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model UserProfile {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  locale    String   @default("en")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  tasteProfile TasteProfile?
+  journal      JournalEntry[]
+  reviews      Review[]
+  referral     ReferralAccount?
+}
+
+model TasteProfile {
+  id        String @id @default(uuid())
+  userId    String @unique
+  umami     Int    // 0-100
+  sweet     Int    // 0-100
+  vegetal   Int    // 0-100
+  body      Int    // 0-100
+  preferredGrade    String?
+  preferredOrigin   String?
+  brewingPreference String? // usucha | koicha
+
+  user UserProfile @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model JournalEntry {
+  id         String   @id @default(uuid())
+  userId     String
+  productId  String
+  rating     Int      // 1-5
+  umami      Int      // 0-100
+  sweet      Int      // 0-100
+  vegetal    Int      // 0-100
+  body       Int      // 0-100
+  notes      String?
+  brewMethod String?
+  photoUrl   String?
+  createdAt  DateTime @default(now())
+
+  user UserProfile @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([productId])
+}
+
+model Review {
+  id         String   @id @default(uuid())
+  userId     String
+  productId  String
+  rating     Int      // 1-5
+  title      String?
+  body       String
+  flavorTags String[] // umami, sweet, vegetal, smooth, creamy, nutty, grassy
+  brewMethod String?
+  photoUrl   String?
+  isVerified Boolean  @default(false)
+  helpfulCount Int    @default(0)
+  status     ReviewStatus @default(PENDING)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  user UserProfile @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([productId])
+  @@index([status])
+}
+
+model ReferralAccount {
+  id           String   @id @default(uuid())
+  userId       String   @unique
+  referralCode String   @unique
+  totalReferred Int     @default(0)
+  totalEarned  Int      @default(0) // loyalty points earned
+  createdAt    DateTime @default(now())
+
+  user UserProfile @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum ReviewStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}

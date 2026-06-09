@@ -1,0 +1,86 @@
+openapi: 3.1.0
+info:
+  title: Matcha Product Service API
+  version: 0.1.0
+  description: Product catalog, variant configuration, and search
+
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      summary: Health check
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                $ref: './shared/components.yaml#/components/schemas/HealthResponse'
+
+  /products:
+    get:
+      operationId: listProducts
+      summary: List products with faceted filtering
+      parameters:
+        - name: grade
+          in: query
+          schema:
+            type: string
+            enum: [CEREMONIAL, PREMIUM, CULINARY]
+        - name: origin
+          in: query
+          schema:
+            type: string
+        - name: cultivar
+          in: query
+          schema:
+            type: string
+        - name: minPrice
+          in: query
+          schema:
+            type: number
+        - name: maxPrice
+          in: query
+          schema:
+            type: number
+        - $ref: './shared/components.yaml#/components/parameters/PageParam'
+        - $ref: './shared/components.yaml#/components/parameters/PageSizeParam'
+      responses:
+        '200':
+          description: Product list
+        '400':
+          $ref: './shared/components.yaml#/components/responses/BadRequest'
+
+  /products/{productId}:
+    get:
+      operationId: getProduct
+      summary: Get product details with full provenance
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Product details
+        '404':
+          $ref: './shared/components.yaml#/components/responses/NotFound'
+
+  /products/{productId}/variants:
+    get:
+      operationId: getProductVariants
+      summary: Get variant matrix for a product
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Variant configuration
+        '404':
+          $ref: './shared/components.yaml#/components/responses/NotFound'

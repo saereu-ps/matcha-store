@@ -1,0 +1,99 @@
+/* Matcha Design System — Zen Tea Aesthetic
+   Inspired by: Japanese washi paper, ink painting, matcha greens, stone textures
+   Palette: Warm cream + sage green + charcoal ink + stone gray */
+
+:root {
+  /* Base — Warm cream/paper (light mode primary) */
+  --matcha-bg: #f7f4ef;
+  --matcha-bg-subtle: #ede9e0;
+  --matcha-bg-muted: #e2ddd4;
+  --matcha-fg: #2c2c2b;
+  --matcha-fg-muted: #5c5c5a;
+  --matcha-fg-subtle: #8a8a87;
+
+  /* Brand — Matcha/sage greens */
+  --matcha-accent: #6b7f5e;
+  --matcha-accent-light: #8fa67c;
+  --matcha-accent-dark: #4a5e3e;
+  --matcha-accent-subtle: rgba(107, 127, 94, 0.08);
+
+  /* Warm accent (from reference — terracotta/vermillion) */
+  --matcha-warm: #c75c2c;
+  --matcha-warm-subtle: rgba(199, 92, 44, 0.08);
+
+  /* Borders — subtle warm gray */
+  --matcha-border: #d4cfc6;
+  --matcha-border-focus: #6b7f5e;
+  --matcha-ring: rgba(107, 127, 94, 0.25);
+
+  /* Shadows — warm, diffused */
+  --matcha-shadow-sm: 0 1px 3px rgba(44, 44, 43, 0.04);
+  --matcha-shadow-md: 0 4px 12px rgba(44, 44, 43, 0.06);
+  --matcha-shadow-lg: 0 12px 24px rgba(44, 44, 43, 0.08);
+
+  /* Typography — serif + clean sans */
+  --font-display: 'Playfair Display', 'Noto Serif JP', serif;
+  --font-body: 'Inter', 'Noto Sans JP', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing (4px grid) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* Radii — minimal, zen */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* Transitions — gentle, deliberate */
+  --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark mode — deep ink/charcoal */
+[data-theme='dark'] {
+  --matcha-bg: #1a1a18;
+  --matcha-bg-subtle: #242422;
+  --matcha-bg-muted: #2e2e2b;
+  --matcha-fg: #f0ece4;
+  --matcha-fg-muted: #b0ada6;
+  --matcha-fg-subtle: #7a7873;
+
+  --matcha-accent: #8fa67c;
+  --matcha-accent-light: #a8c293;
+  --matcha-accent-dark: #6b7f5e;
+  --matcha-accent-subtle: rgba(143, 166, 124, 0.1);
+
+  --matcha-warm: #d4734a;
+  --matcha-warm-subtle: rgba(212, 115, 74, 0.1);
+
+  --matcha-border: #3a3a36;
+  --matcha-border-focus: #8fa67c;
+  --matcha-ring: rgba(143, 166, 124, 0.3);
+
+  --matcha-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --matcha-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --matcha-shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

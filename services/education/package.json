@@ -1,0 +1,30 @@
+{
+  "name": "@matcha/education-service",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Educational platform — brewing guides, origin map, masterclasses, PWA content",
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "test": "vitest run",
+    "lint": "eslint src/",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist coverage"
+  },
+  "dependencies": {
+    "@matcha/event-bus": "workspace:*",
+    "@matcha/shared-kernel": "workspace:*",
+    "@matcha/telemetry": "workspace:*",
+    "express": "4.21.2"
+  },
+  "devDependencies": {
+    "@matcha/config": "workspace:*",
+    "@types/express": "5.0.0",
+    "@types/node": "^25.9.2",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2",
+    "vitest": "2.1.8"
+  }
+}
