@@ -34,8 +34,8 @@
   },
   "devDependencies": {
     "@matcha/config": "workspace:*",
-    "@testing-library/react": "16.1.0",
-    "@types/howler": "2.2.12",
+    "@testing-library/react": "16.3.2",
+    "@types/howler": "2.2.13",
     "@types/react": "18.3.18",
     "@types/react-dom": "18.3.5",
     "jsdom": "25.0.1",
