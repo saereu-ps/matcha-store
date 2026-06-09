@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['@matcha/ui', '@matcha/shared-kernel'],
+  transpilePackages: ['@matcha/ui', '@matcha/shared-kernel', '@matcha/contracts', '@matcha/telemetry'],
   images: {
     unoptimized: true,
     remotePatterns: [
