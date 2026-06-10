@@ -3,12 +3,12 @@
 import { useAuth } from '@/lib/auth';
 import { useCart } from '@/lib/cart';
 import { Button, useTheme } from '@matcha/ui';
-import { AuthModal } from './auth-modal';
 import { clsx } from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { AuthModal } from './auth-modal';
 import { CurrencySelector } from './currency-selector';
 
 
@@ -26,6 +26,7 @@ export function Navbar() {
   const { itemCount } = useCart();
   const { user, isLoggedIn, logout } = useAuth();
   const [authOpen, setAuthOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <>
@@ -63,6 +64,18 @@ export function Navbar() {
 
           {/* Right actions */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* Search */}
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="w-8 h-8 rounded-full flex items-center justify-center text-matcha-fg-muted hover:text-matcha-fg hover:bg-matcha-bg-subtle transition-colors"
+              aria-label="Search"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
+                <circle cx="7" cy="7" r="5" stroke="currentColor" strokeWidth="1.5"/>
+                <path d="M11 11L14 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+            </button>
+
             {/* Currency selector */}
             <CurrencySelector />
 
@@ -214,6 +227,7 @@ export function Navbar() {
         )}
       </AnimatePresence>
       <AuthModal open={authOpen} onClose={() => setAuthOpen(false)} />
+      <SearchModal open={searchOpen} onClose={() => setSearchOpen(!searchOpen)} />
     </>
   );
 }
