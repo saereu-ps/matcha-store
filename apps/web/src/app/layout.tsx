@@ -5,6 +5,7 @@ import { BackToTop } from '@/components/back-to-top';
 import { CartToast } from '@/components/cart-toast';
 import { CookieConsent } from '@/components/cookie-consent';
 import { CursorTrail } from '@/components/cursor-trail';
+import { ChatButton } from '@/components/chat-button';
 import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
@@ -61,14 +62,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#6b7f5e" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>
-      <body className="min-h-screen bg-matcha-bg text-matcha-fg antialiased">
+      <body id="top" className="min-h-screen bg-matcha-bg text-matcha-fg antialiased">
         <Providers>
           <SakuraFall />
           <CursorTrail />
           <ScrollProgress />
           <CookieConsent />
+          <ChatButton />
           <CartToast />
           <WelcomeBanner />
           <BackToTop />

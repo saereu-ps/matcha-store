@@ -2,15 +2,16 @@ import { FadeIn } from '@matcha/ui';
 
 import { BrewingCTA } from '@/components/brewing-cta';
 import { CountdownBanner } from '@/components/countdown-banner';
-import { NewsletterSignup } from '@/components/newsletter-signup';
 import { FeaturedProducts } from '@/components/featured-products';
 import { HeroSection } from '@/components/hero-section';
 import { InteractiveTeacup } from '@/components/interactive-teacup';
 import { Marquee } from '@/components/marquee';
 import { MatchaMixer } from '@/components/matcha-mixer';
+import { NewsletterSignup } from '@/components/newsletter-signup';
 import { OriginHighlights } from '@/components/origin-highlights';
 import { StatsSection } from '@/components/stats-section';
 import { SubscriptionCTA } from '@/components/subscription-cta';
+import { Testimonials } from '@/components/testimonials';
 import { ZenQuote } from '@/components/zen-quote';
 
 export default function HomePage() {
@@ -85,11 +86,15 @@ export default function HomePage() {
         <OriginHighlights />
       </section>
 
+
       {/* Subscription CTA */}
       <SubscriptionCTA />
 
       {/* Countdown — limited release */}
       <CountdownBanner />
+
+      {/* Testimonials */}
+      <Testimonials />
 
       {/* Newsletter */}
       <NewsletterSignup />
