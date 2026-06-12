@@ -1,12 +1,14 @@
 import { FadeIn } from '@matcha/ui';
 
 import { BrewingCTA } from '@/components/brewing-cta';
+import { ColorMixer } from '@/components/color-mixer';
 import { CountdownBanner } from '@/components/countdown-banner';
 import { FeaturedProducts } from '@/components/featured-products';
 import { HeroSection } from '@/components/hero-section';
 import { InteractiveTeacup } from '@/components/interactive-teacup';
 import { Marquee } from '@/components/marquee';
 import { MatchaMixer } from '@/components/matcha-mixer';
+import { MatchaStoryTimeline } from '@/components/matcha-story-timeline';
 import { NewsletterSignup } from '@/components/newsletter-signup';
 import { OriginHighlights } from '@/components/origin-highlights';
 import { StatsSection } from '@/components/stats-section';
@@ -89,6 +91,12 @@ export default function HomePage() {
 
       {/* Subscription CTA */}
       <SubscriptionCTA />
+
+      {/* Story Timeline — From Leaf to Cup */}
+      <MatchaStoryTimeline />
+
+      {/* Color Mixer */}
+      <ColorMixer />
 
       {/* Countdown — limited release */}
       <CountdownBanner />
