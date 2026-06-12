@@ -1,9 +1,8 @@
 'use client';
 
 import { useAuth } from '@/lib/auth';
-import { SearchModal } from './search-modal';
-import { LanguageSelector } from './language-selector';
 import { useCart } from '@/lib/cart';
+import { useI18n } from '@/lib/i18n';
 import { Button, useTheme } from '@matcha/ui';
 import { clsx } from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -12,13 +11,15 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { AuthModal } from './auth-modal';
 import { CurrencySelector } from './currency-selector';
+import { LanguageSelector } from './language-selector';
+import { SearchModal } from './search-modal';
 
 
 const NAV_LINKS = [
-  { href: '/products', label: 'Collection' },
-  { href: '/subscriptions', label: 'Subscribe' },
-  { href: '/education', label: 'Learn' },
-  { href: '/loyalty', label: 'Rewards' },
+  { href: '/products', key: 'nav.collection' },
+  { href: '/subscriptions', key: 'nav.subscribe' },
+  { href: '/education', key: 'nav.learn' },
+  { href: '/loyalty', key: 'nav.rewards' },
 ];
 
 export function Navbar() {
@@ -29,6 +30,7 @@ export function Navbar() {
   const { user, isLoggedIn, logout } = useAuth();
   const [authOpen, setAuthOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const { t } = useI18n();
 
   return (
     <>
@@ -52,7 +54,7 @@ export function Navbar() {
                     : 'text-matcha-fg-muted hover:text-matcha-fg',
                 )}
               >
-                {link.label}
+                {t(link.key)}
                 {(pathname === link.href || pathname?.startsWith(link.href + '/')) && (
                   <motion.div
                     layoutId="nav-indicator"
@@ -106,10 +108,10 @@ export function Navbar() {
               {isLoggedIn ? (
                 <div className="flex items-center gap-2">
                   <span className="text-[11px] text-matcha-fg-muted">{user?.name}</span>
-                  <button onClick={logout} className="text-[10px] text-matcha-fg-subtle hover:text-matcha-warm transition-colors">Logout</button>
+                  <button onClick={logout} className="text-[10px] text-matcha-fg-subtle hover:text-matcha-warm transition-colors">{t('nav.logout')}</button>
                 </div>
               ) : (
-                <Button variant="secondary" size="sm" onClick={() => setAuthOpen(true)}>Sign In</Button>
+                <Button variant="secondary" size="sm" onClick={() => setAuthOpen(true)}>{t('nav.signin')}</Button>
               )}
             </div>
 
@@ -183,7 +185,7 @@ export function Navbar() {
                           : 'text-matcha-fg hover:bg-matcha-bg-subtle',
                       )}
                     >
-                      {link.label}
+                      {t(link.key)}
                     </Link>
                   </motion.div>
                 ))}

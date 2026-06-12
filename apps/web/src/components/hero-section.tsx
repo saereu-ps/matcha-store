@@ -1,5 +1,6 @@
 'use client';
 
+import { useI18n } from '@/lib/i18n';
 import { Button, FadeIn } from '@matcha/ui';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -7,6 +8,7 @@ import { MouseParallaxWrapper } from './mouse-parallax-hero';
 import { TextReveal } from './text-reveal';
 
 export function HeroSection() {
+  const { t } = useI18n();
   return (
     <section className="relative min-h-[90vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Warm paper background with subtle ink wash gradient */}
@@ -52,7 +54,7 @@ export function HeroSection() {
         {/* Main title — clean serif like the reference */}
         <TextReveal delay={0.5}>
           <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-matcha-fg leading-[0.9] tracking-tight">
-            Matchá
+            {t('hero.title')}
           </h1>
         </TextReveal>
 
@@ -73,10 +75,10 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 1.2 }}
         >
           <Link href="/products">
-            <Button size="lg">Explore Collection</Button>
+            <Button size="lg">{t('hero.cta1')}</Button>
           </Link>
           <Link href="/education/taste-quiz">
-            <Button variant="secondary" size="lg">Discover Your Taste</Button>
+            <Button variant="secondary" size="lg">{t('hero.cta2')}</Button>
           </Link>
         </motion.div>
         </MouseParallaxWrapper>
