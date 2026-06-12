@@ -2,6 +2,7 @@
 
 import { useAuth } from '@/lib/auth';
 import { SearchModal } from './search-modal';
+import { LanguageSelector } from './language-selector';
 import { useCart } from '@/lib/cart';
 import { Button, useTheme } from '@matcha/ui';
 import { clsx } from 'clsx';
@@ -78,6 +79,7 @@ export function Navbar() {
             </button>
 
             {/* Currency selector */}
+            <LanguageSelector />
             <CurrencySelector />
 
             {/* Theme toggle */}
