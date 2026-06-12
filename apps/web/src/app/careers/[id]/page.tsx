@@ -15,7 +15,7 @@ export default function CareerApplyPage({ params }: { params: { id: string } }) 
 
     const form = e.currentTarget;
     const data = new FormData(form);
-    data.append('access_key', 'YOUR_WEB3FORMS_KEY'); // Replace with real key
+    data.append('access_key', 'f4fb30f2-5692-47a1-afa5-e805356fe740'); // Replace with real key
     data.append('subject', `Job Application: ${params.id} — Matchá Careers`);
     data.append('from_name', 'Matchá Careers Form');
 

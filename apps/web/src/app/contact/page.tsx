@@ -34,7 +34,7 @@ export default function ContactPage() {
         <Card>
           <h3 className="font-medium text-matcha-fg text-sm mb-4">Send a Message</h3>
           <form className="space-y-3" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+            <input type="hidden" name="access_key" value="f4fb30f2-5692-47a1-afa5-e805356fe740" />
             <input type="hidden" name="to" value="Pilan.s112@gmail.com" />
             <input type="hidden" name="subject" value="Contact Form — Matchá Website" />
             <input type="hidden" name="from_name" value="Matchá Contact Form" />
