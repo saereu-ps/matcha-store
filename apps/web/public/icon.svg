@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background — warm cream circle -->
+  <rect width="512" height="512" rx="108" fill="#f7f4ef"/>
+
+  <!-- Subtle border -->
+  <rect x="4" y="4" width="504" height="504" rx="104" fill="none" stroke="#d4cfc6" stroke-width="2"/>
+
+  <!-- Matcha bowl (chawan) -->
+  <path d="M130 280 C130 280 150 380 256 380 C362 380 382 280 382 280" stroke="#6b7f5e" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+  <!-- Bowl rim -->
+  <ellipse cx="256" cy="280" rx="126" ry="28" stroke="#6b7f5e" stroke-width="6" fill="none"/>
+
+  <!-- Matcha liquid surface -->
+  <ellipse cx="256" cy="280" rx="110" ry="22" fill="#6b7f5e" opacity="0.15"/>
+
+  <!-- Steam lines -->
+  <path d="M220 240 C220 220 228 200 220 180" stroke="#6b7f5e" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+  <path d="M256 230 C256 210 264 190 256 165" stroke="#6b7f5e" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+  <path d="M292 238 C292 218 300 198 292 178" stroke="#6b7f5e" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- Small leaf decoration top-right -->
+  <path d="M380 120 C380 120 360 140 365 160 C370 140 390 130 380 120Z" fill="#6b7f5e" opacity="0.25"/>
+
+  <!-- Brand text -->
+  <text x="256" y="445" text-anchor="middle" font-family="serif" font-size="48" fill="#2c2c2b" letter-spacing="4">Matchá</text>
+</svg>
