@@ -3,6 +3,7 @@
 import { Button, FadeIn } from '@matcha/ui';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { MouseParallaxWrapper } from './mouse-parallax-hero';
 import { TextReveal } from './text-reveal';
 
 export function HeroSection() {
@@ -37,6 +38,7 @@ export function HeroSection() {
       ))}
 
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
+        <MouseParallaxWrapper>
         {/* Japanese-inspired subtitle */}
         <motion.p
           className="text-matcha-accent font-medium tracking-[0.25em] sm:tracking-[0.3em] uppercase text-[10px] sm:text-xs mb-6 sm:mb-8"
@@ -77,6 +79,7 @@ export function HeroSection() {
             <Button variant="secondary" size="lg">Discover Your Taste</Button>
           </Link>
         </motion.div>
+        </MouseParallaxWrapper>
       </div>
 
       {/* Scroll indicator — ink brush style */}

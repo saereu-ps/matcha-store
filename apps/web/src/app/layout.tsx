@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono, Playfair_Display } from 'next/font/google';
 
+import { BackToTop } from '@/components/back-to-top';
+import { CursorTrail } from '@/components/cursor-trail';
 import { CartToast } from '@/components/cart-toast';
 import { Footer } from '@/components/footer';
-import { WelcomeBanner } from '@/components/welcome-banner';
-import { BackToTop } from '@/components/back-to-top';
 import { Navbar } from '@/components/navbar';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import { Providers } from '@/components/providers';
 import { SakuraFall } from '@/components/sakura-fall';
 import { ScrollProgress } from '@/components/scroll-progress';
+import { WelcomeBanner } from '@/components/welcome-banner';
 
 import '@/styles/globals.css';
 
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-matcha-bg text-matcha-fg antialiased">
         <Providers>
           <SakuraFall />
+          <CursorTrail />
           <ScrollProgress />
           <CartToast />
           <WelcomeBanner />
