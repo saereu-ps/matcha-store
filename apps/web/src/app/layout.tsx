@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono, Playfair_Display } from 'next/font/google';
 
 import { BackToTop } from '@/components/back-to-top';
-import { CursorTrail } from '@/components/cursor-trail';
 import { CartToast } from '@/components/cart-toast';
+import { CursorTrail } from '@/components/cursor-trail';
 import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
@@ -35,7 +35,21 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Matchá — Premium Japanese Matcha',
   description: 'Discover ceremonial-grade matcha from Japan\'s finest regions. Subscriptions, brewing guides, and a curated experience for matcha enthusiasts.',
-  keywords: ['matcha', 'ceremonial grade', 'japanese tea', 'uji matcha', 'matcha subscription'],
+  keywords: ['matcha', 'ceremonial grade', 'japanese tea', 'uji matcha', 'matcha subscription', 'premium matcha thailand'],
+  openGraph: {
+    title: 'Matchá — Premium Japanese Matcha',
+    description: 'Stone-ground matcha from Uji, Kagoshima, Nishio. Subscriptions, brewing guides, and interactive tea ceremonies.',
+    siteName: 'Matchá',
+    locale: 'en_US',
+    type: 'website',
+    url: 'https://matcha-store-web.vercel.app',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Matchá — Premium Japanese Matcha',
+    description: 'Stone-ground matcha from Japan. Curated with intention, delivered with care.',
+  },
+  metadataBase: new URL('https://matcha-store-web.vercel.app'),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
