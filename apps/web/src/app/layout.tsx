@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono, Playfair_Display } from 'next/font/google';
 
 import { BackToTop } from '@/components/back-to-top';
 import { CartToast } from '@/components/cart-toast';
+import { CookieConsent } from '@/components/cookie-consent';
 import { CursorTrail } from '@/components/cursor-trail';
 import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar';
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SakuraFall />
           <CursorTrail />
           <ScrollProgress />
+          <CookieConsent />
           <CartToast />
           <WelcomeBanner />
           <BackToTop />

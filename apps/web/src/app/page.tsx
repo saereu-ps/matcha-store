@@ -1,6 +1,8 @@
 import { FadeIn } from '@matcha/ui';
 
 import { BrewingCTA } from '@/components/brewing-cta';
+import { CountdownBanner } from '@/components/countdown-banner';
+import { NewsletterSignup } from '@/components/newsletter-signup';
 import { FeaturedProducts } from '@/components/featured-products';
 import { HeroSection } from '@/components/hero-section';
 import { InteractiveTeacup } from '@/components/interactive-teacup';
@@ -85,6 +87,12 @@ export default function HomePage() {
 
       {/* Subscription CTA */}
       <SubscriptionCTA />
+
+      {/* Countdown — limited release */}
+      <CountdownBanner />
+
+      {/* Newsletter */}
+      <NewsletterSignup />
 
       {/* Bottom marquee */}
       <div className="py-6 border-t border-matcha-border">

@@ -30,6 +30,7 @@ export function Footer() {
               <li><Link href="/branches" className="hover:text-matcha-accent transition-colors">Branches</Link></li>
               <li><Link href="/careers" className="hover:text-matcha-accent transition-colors">Careers</Link></li>
               <li><Link href="/contact" className="hover:text-matcha-accent transition-colors">Contact</Link></li>
+              <li><Link href="/faq" className="hover:text-matcha-accent transition-colors">FAQ</Link></li>
             </ul>
           </div>
           <div>
