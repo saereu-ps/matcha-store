@@ -1,6 +1,7 @@
 'use client';
 
 import { useAuth } from '@/lib/auth';
+import { SearchModal } from './search-modal';
 import { useCart } from '@/lib/cart';
 import { Button, useTheme } from '@matcha/ui';
 import { clsx } from 'clsx';
