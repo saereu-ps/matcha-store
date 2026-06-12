@@ -3,6 +3,8 @@ import { Inter, JetBrains_Mono, Playfair_Display } from 'next/font/google';
 
 import { CartToast } from '@/components/cart-toast';
 import { Footer } from '@/components/footer';
+import { WelcomeBanner } from '@/components/welcome-banner';
+import { BackToTop } from '@/components/back-to-top';
 import { Navbar } from '@/components/navbar';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import { Providers } from '@/components/providers';
@@ -50,6 +52,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SakuraFall />
           <ScrollProgress />
           <CartToast />
+          <WelcomeBanner />
+          <BackToTop />
           <Navbar />
           <PageTransitionWrapper>
             {children}
