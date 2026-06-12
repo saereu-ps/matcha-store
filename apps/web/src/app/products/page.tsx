@@ -97,17 +97,27 @@ export default function ProductsPage() {
 
         {/* Sort */}
         <div className="flex items-center gap-2 mb-8">
-          <span className="text-matcha-fg-subtle text-xs">Sort:</span>
-          <select
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-            className="text-xs bg-transparent border border-matcha-border rounded-sm px-2 py-1 text-matcha-fg focus:outline-none focus:border-matcha-accent"
-          >
-            <option value="default">Recommended</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-          </select>
-          <span className="text-matcha-fg-subtle text-xs ml-auto">{filtered.length} products</span>
+          <span className="text-matcha-fg-subtle text-[10px] sm:text-xs">Sort:</span>
+          <div className="flex gap-1">
+            {[
+              { value: 'default', label: 'Recommended' },
+              { value: 'price-low', label: 'Price ↑' },
+              { value: 'price-high', label: 'Price ↓' },
+            ].map(opt => (
+              <button
+                key={opt.value}
+                onClick={() => setSortBy(opt.value as typeof sortBy)}
+                className={`px-2.5 py-1 text-[10px] sm:text-xs rounded-full transition-all ${
+                  sortBy === opt.value
+                    ? 'bg-matcha-fg text-matcha-bg font-medium'
+                    : 'text-matcha-fg-muted hover:text-matcha-fg border border-matcha-border/60 hover:border-matcha-fg/30'
+                }`}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+          <span className="text-matcha-fg-subtle text-[10px] sm:text-xs ml-auto">{filtered.length} products</span>
         </div>
       </FadeIn>
 
