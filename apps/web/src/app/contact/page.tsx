@@ -33,7 +33,12 @@ export default function ContactPage() {
       <FadeIn delay={0.2}>
         <Card>
           <h3 className="font-medium text-matcha-fg text-sm mb-4">Send a Message</h3>
-          <form className="space-y-3">
+          <form className="space-y-3" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+            <input type="hidden" name="to" value="Pilan.s112@gmail.com" />
+            <input type="hidden" name="subject" value="Contact Form — Matchá Website" />
+            <input type="hidden" name="from_name" value="Matchá Contact Form" />
+            <input type="hidden" name="redirect" value="https://matcha-store-web.vercel.app/contact" />
             <div className="grid sm:grid-cols-2 gap-3">
               <input type="text" placeholder="Name" className="w-full px-3 py-2.5 text-xs bg-matcha-bg border border-matcha-border rounded-lg text-matcha-fg placeholder:text-matcha-fg-subtle/40 focus:outline-none focus:border-matcha-accent focus:ring-1 focus:ring-matcha-ring" />
               <input type="email" placeholder="Email" className="w-full px-3 py-2.5 text-xs bg-matcha-bg border border-matcha-border rounded-lg text-matcha-fg placeholder:text-matcha-fg-subtle/40 focus:outline-none focus:border-matcha-accent focus:ring-1 focus:ring-matcha-ring" />
